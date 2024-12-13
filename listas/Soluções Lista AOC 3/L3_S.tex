@@ -167,17 +167,17 @@ Para as questões a seguir, considere um sistema com 4 GB de memória física, 6
 
 \item Descreva a sequência de acesso a um endereço registrado no TLB.
 
-\begin{enumerate}
+\begin{itemize}
     \item o processador soma o número de página virtual ao valor contido no registrador de tabela de página;
     \item o processador transmite o resultado ao TLB;
     \item o TLB compara este número com a tag de cada uma de suas entradas;
     \item o TLB indica ao processador que encontrou correspondência e retorna o número de página física;
     \item o processador concatena este número ao offset do endereço e o acessa na memória principal;
-\end{enumerate}
+\end{itemize}
 
 \item Descreva a sequência de acesso a um endereço não registrado no TLB, mas mapeado na memória principal.
 
-\begin{enumerate}
+\begin{itemize}
     \item o processador soma o número de página virtual ao valor contido no registrador de tabela de página;
     \item o processador transmite o resultado ao TLB;
     \item o TLB compara este número com cada uma de suas entradas;
@@ -185,11 +185,11 @@ Para as questões a seguir, considere um sistema com 4 GB de memória física, 6
     \item o processador acessa a memória no endereço resultante, referente à respectiva entrada na tabela de páginas do processo;
     \item nesta entrada, lê que o endereço está na memória principal e extrai o respectivo número de página física;
     \item o processador concatena este número ao offset do endereço e acessa a memória principal no endereço resultante;
-\end{enumerate}
+\end{itemize}
 
 \item Descreva a sequência de acesso a um endereço não registrado no TLB, nem mapeado na memória principal.
 
-\begin{enumerate}
+\begin{itemize}
     \item o processador soma o número de página virtual ao valor contido no registrador de tabela de página;
     \item o processador transmite o resultado ao TLB;
     \item o TLB compara este número com cada uma de suas entradas;
@@ -201,7 +201,7 @@ Para as questões a seguir, considere um sistema com 4 GB de memória física, 6
     \item caso o bit de escrita desta seja 1, o SO transfere seu conteúdo para o disco;
     \item o SO transfere o conteúdo da página no disco para a página recém-liberada na memória;
     \item o processo é retomado, busca, novamente, o dado e o acessa na memória principal;
-\end{enumerate}
+\end{itemize}
 
 \section*{Tema: entrada e saída endereçada por memória}
 
