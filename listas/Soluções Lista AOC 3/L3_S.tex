@@ -34,11 +34,17 @@ $16 - 4 - 3 - 1 = 8$
 \item Qual o tamanho, em bits, da cache?
 $16\ \text{bit/palavra}\ *\ 8\ \text{palavra/via}\ *\ 2\ \text{via/conjunto}\ *\ 16\ \text{conjunto}\ +\ 8\ \text{bit/tag}\ *\ 1\ \text{tag/via}\ *\ 2\ \text{via/conjunto}\ *\ 16\ \text{conjunto}\ +\ 1\ \text{bit\_validade/via}\ *\ 2\ \text{via/conjunto}\ *\ 16\ \text{conjunto}\ +\ 1\ \text{bit\_escrita/via}\ *\ 2\ \text{via/conjunto}\ *\ 16\ \text{conjunto}\ +\ 1\ \text{bit\_uso/conjunto}\ *\ 16\ \text{conjunto}\ =\ 4432\ \text{bits}$
 
-Para as questões 4 a 6, considere que o processador acessou, nesta ordem, os endereços \verb|0x00F0(L)|, \verb|0x00F1(L)|, \verb|0x0010(E)|, \verb|0x1018(L)|, \verb|0x2018(E)|, \verb|0x3018(E)|, \verb|0xFFF0(L)|, \verb|0xFF00(L)|. L \textrightarrow Leitura, E \textrightarrow Escrita.
+Para as questões 4 a 6, considere que o processador acessou, nesta ordem, os endereços \\
+\verb|0x00F0(L)|, \verb|0x00F1(L)|, \verb|0x0010(E)|, \verb|0x1018(L)|, \\
+\verb|0x2018(E)|, \verb|0x3018(E)|, \verb|0xFFF0(L)|, \verb|0xFF00(L)|. \\
+L \textrightarrow Leitura, E \textrightarrow Escrita.
 
-\item Quantas requisições foram feitas à memória principal? \verb|0x00F0(L)|, \verb|0x0010(L)|, \verb|0x1018(L)|, \verb|0x0010(E)|, \verb|0x2018(L)|, \verb|0x3018(L)|, \verb|0xFFF0(L)| e \verb|0xFF00(L)|: 8 requisições.
+\item Quantas requisições foram feitas à memória principal? São feitas 8 requisições à memória principal: \\
+\verb|0x00F0 ... 0x00F1 (L)|, \verb|0x0010 ... 0x0017 (L)|, \verb|0x0018 ... 0x001F (L)|, \\
+\verb|0x0010 ... 0x0017 (E)|, \verb|0x2018 ... 0x201F (L)|, \verb|0x3018 ... 0x301F (L)|, \\
+\verb|0xFFF0 ... 0xFFF7 (L)|, \verb|0xFF00 ... 0xFF07 (L)|.
 
-\item Quais endereços são escritos na memória principal? \verb|0x0010|, porque, após sua requisição, são acessados mais blocos com o mesmo índice, \verb|0001|, do que o conjunto suporta armazenar. \verb|0x1010| não é escrito na memória principal porque seu conteúdo não foi alterado na cache.
+\item Quais endereços são escritos na memória principal? \verb|0x0010 ... 0x0017|, porque, após sua requisição, são acessados mais blocos com o mesmo índice, \verb|0001|, do que o conjunto suporta armazenar. \verb|0x0018 ... 0x001F| não é escrito na memória principal porque seu conteúdo não foi alterado na cache.
 
 \item Qual o valor armazenado na tag do endereço \verb|0xBCDE|? \verb|10111100|
 
